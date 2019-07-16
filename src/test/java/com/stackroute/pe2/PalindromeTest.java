@@ -54,6 +54,9 @@ public class PalindromeTest {
     }
 
     @Test(expected = InvalidParameterException.class)
-    public void giv
+    public void givenNegativeValueShouldThrowInvalidParameterException() {
+        //act
+        String actualResult = palindrome.isPalindrome(-1234);
+    }
 
 }
