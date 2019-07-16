@@ -42,9 +42,9 @@ public class EvenNumTestTest {
     }
 
     @Test(expected = InvalidParameterException.class)
-    public void givenInputAsACharacterShouldThrowException() {
+    public void givenStringShouldThrowException() {
         //act
-        boolean actualResult = evenNumTest.isEven("a");
+        boolean actualResult = evenNumTest.isEven("indu");
     }
 
     @Test(expected = NullPointerException.class)
