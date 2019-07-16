@@ -53,10 +53,14 @@ public class PalindromeTest {
         String actualResult = palindrome.isPalindrome(null);
     }
 
-    @Test(expected = InvalidParameterException.class)
-    public void givenNegativeValueShouldThrowInvalidParameterException() {
+    @TestassertEquals
+    public void givenNegativeValueShouldThrowErrorMessage() {
         //act
         String actualResult = palindrome.isPalindrome(-1234);
+        //assert
+        assertEquals("Only give positive numbers greater than 0",actualResult);
     }
+
+
 
 }
