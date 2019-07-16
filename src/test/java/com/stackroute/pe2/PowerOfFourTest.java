@@ -46,6 +46,14 @@ public class PowerOfFourTest {
         assertEquals("Given integer is power of 4",actualResult);
     }
 
+    @Test
+    public void givenZeroShouldReturnErrorMessage() {
+        //act
+        String actualResult = powerOfFour.isPowerOfFour(0);
+        //assert
+        assertEquals("Enter input greater than zero",actualResult);
+    }
+
     @Test(expected = InvalidParameterException.class)
     public void givenLongIntegerShouldThrowInvalidParameterException() {
         //act

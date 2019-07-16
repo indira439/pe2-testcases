@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.security.InvalidParameterException;
+
 import static org.junit.Assert.*;
 
 public class PalindromeTest {
@@ -50,5 +52,8 @@ public class PalindromeTest {
         //act
         String actualResult = palindrome.isPalindrome(null);
     }
+
+    @Test(expected = InvalidParameterException.class)
+    public void giv
 
 }
