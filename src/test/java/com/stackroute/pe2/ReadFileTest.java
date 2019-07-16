@@ -1,7 +1,7 @@
 package com.stackroute.pe2;
 
 import org.junit.After;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
@@ -12,7 +12,7 @@ public class ReadFileTest {
 
     ReadFile readFile;
 
-    @BeforeClass
+    @Before
     public void setUp() {
         readFile = new ReadFile();
     }
@@ -33,7 +33,7 @@ public class ReadFileTest {
     @Test
     public void givenFileShouldReturnTheLengthOfTheFile() {
         //act
-        String actualResult = readFile.lengthOf("sample",".txt");
+        int actualResult = readFile.lengthOf("sample",".txt");
         //assert
         assertEquals(22,actualResult);
     }
@@ -41,7 +41,7 @@ public class ReadFileTest {
     @Test
     public void givenFileShouldReturnTheLengthOfTheFileFailure() {
         //act
-        String actualResult = readFile.lengthOf("sample",".txt");
+        int actualResult = readFile.lengthOf("sample",".txt");
         //assert
         assertNotEquals(12,actualResult);
     }
@@ -50,7 +50,7 @@ public class ReadFileTest {
     public void givenInvalidFileShouldThrowException() {
         //act
         readFile.fileReader("SAMple",".txt");
-        readFile.fileReader(" ",".txt");
+//        readFile.fileReader(" ",".txt");
     }
 
     @Test

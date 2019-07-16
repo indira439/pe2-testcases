@@ -1,6 +1,7 @@
 package com.stackroute.pe2;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -11,11 +12,11 @@ import static org.junit.Assert.*;
 
 public class EvenNumTestTest {
 
-    EvenNumTest evenNumTest;
+    private EvenNumTest evenNumTest;
 
-    @BeforeClass
+    @Before
     public void setUp() {
-        this.evenNumTest = new EvenNumTest();
+        evenNumTest = new EvenNumTest();
     }
 
     @After
@@ -26,7 +27,7 @@ public class EvenNumTestTest {
     @Test
     public void givenAnEVentIntegerShouldReturnTrue() {
         //act
-        boolean actualResult = evenNumTest.isEven(6);
+        String actualResult = evenNumTest.isEven(6);
         //assert
         assertEquals("True",actualResult);
 
@@ -35,7 +36,7 @@ public class EvenNumTestTest {
     @Test
     public void givenAnOddIntegerShouldReturnFalse() {
         //act
-        boolean actualResult = evenNumTest.isEven(7);
+        String actualResult = evenNumTest.isEven(7);
         //assert
         assertEquals("False",actualResult);
 
@@ -43,7 +44,7 @@ public class EvenNumTestTest {
     @Test
     public void givenAnEVentIntegerShouldReturnTrueFailure() {
         //act
-        boolean actualResult = evenNumTest.isEven(6);
+        String actualResult = evenNumTest.isEven(6);
         //assert
         assertNotEquals("False",actualResult);
 
@@ -52,7 +53,7 @@ public class EvenNumTestTest {
     @Test
     public void givenAnOddIntegerShouldReturnFalseFailure() {
         //act
-        boolean actualResult = evenNumTest.isEven(7);
+        String actualResult = evenNumTest.isEven(7);
         //assert
         assertNotEquals("True",actualResult);
 
@@ -61,7 +62,7 @@ public class EvenNumTestTest {
     @Test
     public void givenAnNegativeIntegerShouldThrowError() {
         //act
-        boolean actualResult = evenNumTest.isEven(-6);
+        String actualResult = evenNumTest.isEven(-6);
         //assert
         assertEquals("Only positive numbers",actualResult);
 
@@ -70,13 +71,13 @@ public class EvenNumTestTest {
     @Test(expected = InvalidParameterException.class)
     public void givenStringShouldThrowInvalidParameterException() {
         //act
-        boolean actualResult = evenNumTest.isEven("indu");
+        evenNumTest.isEven("indu");
     }
 
     @Test(expected = NullPointerException.class)
     public void givenNullShouldThrowNullPointerException() {
         //act
-        boolean actualResult = evenNumTest.isEven(null);
+        evenNumTest.isEven(null);
     }
 
 }

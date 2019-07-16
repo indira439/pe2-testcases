@@ -1,7 +1,7 @@
 package com.stackroute.pe2;
 
 import org.junit.After;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.security.InvalidParameterException;
@@ -12,7 +12,7 @@ public class PowerOfFourTest {
 
     PowerOfFour powerOfFour;
 
-    @BeforeClass
+    @Before
     public void setUp() {
         this.powerOfFour = new PowerOfFour();
     }
@@ -43,7 +43,7 @@ public class PowerOfFourTest {
         //act
         String actualResult = powerOfFour.isPowerOfFour(16);
         //assert
-        assertNotEquals("Given integer is power of 4",actualResult);
+        assertNotEquals("Given integer is not a power of 4",actualResult);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class PowerOfFourTest {
         //act
         String actualResult = powerOfFour.isPowerOfFour(20);
         //assert
-        assertNotEquals("Given integer is not a power of 4",actualResult);
+        assertNotEquals("Given integer is a power of 4",actualResult);
     }
 
     @Test
@@ -63,17 +63,17 @@ public class PowerOfFourTest {
     }
 
     @Test
-    public void givenZeroShouldReturnErrorMessage() {
+    public void givenIntegerShouldReturnIsPowerOfFour() {
         //act
-        String actualResult = powerOfFour.isPowerOfFour(0);
+        String actualResult = powerOfFour.isPowerOfFour(1);
         //assert
-        assertEquals("Enter input greater than zero",actualResult);
+        assertEquals("Given integer is power of 4",actualResult);
     }
 
     @Test(expected = InvalidParameterException.class)
     public void givenLongIntegerShouldThrowInvalidParameterException() {
         //act
-        String actualResult = powerOfFour.isPowerOfFour(1111111111);
+        String actualResult = powerOfFour.isPowerOfFour("1111111111");
     }
 
     @Test(expected = NullPointerException.class)

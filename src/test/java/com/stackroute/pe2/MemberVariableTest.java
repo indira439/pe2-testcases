@@ -1,8 +1,10 @@
 package com.stackroute.pe2;
 
 import org.junit.After;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.security.InvalidParameterException;
 
 import static org.junit.Assert.*;
 
@@ -10,7 +12,7 @@ public class MemberVariableTest {
 
     MemberVariable memberVariable;
 
-    @BeforeClass
+    @Before
     public void setUp() {
         this.memberVariable = new MemberVariable();
     }
@@ -39,9 +41,9 @@ public class MemberVariableTest {
     @Test
     public void givenFloatShouldDisplayMembersSalary() {
         //act
-        int actualResult = memberVariable.memberSalary(45000.45);
+        double actualResult = memberVariable.memberSalary(45000.45);
         //assert
-        assertEquals(45000.45,actualResult);
+        assertEquals(45000.45, actualResult, 0.00);
     }
     @Test
     public void givenStringShouldDisplayMemberNameFailure() {
@@ -62,7 +64,7 @@ public class MemberVariableTest {
     @Test
     public void givenFloatShouldDisplayMembersSalaryFailure() {
         //act
-        int actualResult = memberVariable.memberSalary(45000.45);
+        double actualResult = memberVariable.memberSalary(45000.45);
         //assert
         assertNotEquals(2547,actualResult);
     }
@@ -83,19 +85,10 @@ public class MemberVariableTest {
         String salary = memberVariable.memberSalary(null);
     }
 
-    @Test
-    public void givenNegativeIntegerShouldThrowErrorMessage() {
+    @Test(expected = InvalidParameterException.class)
+    public void givenNegativeIntegerShouldInvalidParameterException() {
         //act
-        String actualResult = memberVariable.memberAge(-20);
-        //assert
-        assertEquals("Age will not be in negative",actualResult);
-    }
-
-    @Test
-    public void givenNegativeIntegerShouldThrowErrorMessage() {
-        //act
-        String actualResult = memberVariable.memberSalary(-2000.76);
-        //assert
-        assertEquals("Salary will not be in negative",actualResult);
+        memberVariable.memberSalary(-2000.76);
+        memberVariable.memberAge(-20);
     }
 }
