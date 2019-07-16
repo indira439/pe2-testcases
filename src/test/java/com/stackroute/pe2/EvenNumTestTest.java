@@ -45,18 +45,12 @@ public class EvenNumTestTest {
     public void givenInputAsACharacterShouldThrowException() {
         //act
         boolean actualResult = evenNumTest.isEven("a");
-
-        //assert
-        //assertEquals("True",actualResult);
-
     }
 
     @Test(expected = NullPointerException.class)
     public void givenNullShouldThrowNullPointerException() {
         //act
         boolean actualResult = evenNumTest.isEven(null);
-        //assert
-
     }
 
 }
