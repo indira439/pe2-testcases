@@ -53,7 +53,7 @@ public class PalindromeTest {
         String actualResult = palindrome.isPalindrome(null);
     }
 
-    @TestassertEquals
+    @Test
     public void givenNegativeValueShouldThrowErrorMessage() {
         //act
         String actualResult = palindrome.isPalindrome(-1234);
