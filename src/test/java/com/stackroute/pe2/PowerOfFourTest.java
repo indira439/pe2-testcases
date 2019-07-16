@@ -1,7 +1,7 @@
 package com.stackroute.pe2;
 
 import org.junit.After;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.security.InvalidParameterException;
@@ -12,13 +12,13 @@ public class PowerOfFourTest {
 
     PowerOfFour powerOfFour;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeClass
+    public void setUp() {
         this.powerOfFour = new PowerOfFour();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         powerOfFour= null;
     }
 

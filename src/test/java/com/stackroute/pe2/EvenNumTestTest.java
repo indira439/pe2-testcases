@@ -1,7 +1,7 @@
 package com.stackroute.pe2;
 
 import org.junit.After;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -13,13 +13,13 @@ public class EvenNumTestTest {
 
     EvenNumTest evenNumTest;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeClass
+    public void setUp() {
         this.evenNumTest = new EvenNumTest();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         evenNumTest= null;
     }
 
@@ -42,7 +42,7 @@ public class EvenNumTestTest {
     }
 
     @Test(expected = InvalidParameterException.class)
-    public void givenStringShouldThrowException() {
+    public void givenStringShouldThrowInvalidParameterException() {
         //act
         boolean actualResult = evenNumTest.isEven("indu");
     }

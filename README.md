@@ -1,6 +1,6 @@
 # Java_Practice2
 
-Following TDD method created test cases for the following
+Following TDD method created test cases for the following:
 
 1.Write a Java method to Reverse the given input & Check if it is a Palindrome.
 

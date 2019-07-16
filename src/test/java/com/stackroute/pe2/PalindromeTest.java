@@ -1,7 +1,7 @@
 package com.stackroute.pe2;
 
 import org.junit.After;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.security.InvalidParameterException;
@@ -12,14 +12,14 @@ public class PalindromeTest {
 
     Palindrome palindrome;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeClass
+    public void setUp() {
         this.palindrome = new Palindrome();
     }
 
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         palindrome= null;
     }
 
