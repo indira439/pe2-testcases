@@ -4,8 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOError;
-import java.io.IOException;
+import java.security.InvalidParameterException;
 
 import static org.junit.Assert.*;
 
@@ -47,10 +46,16 @@ public class PowerOfFourTest {
         assertEquals("Given integer is power of 4",actualResult);
     }
 
-    @Test(expected = IOException.class)
-    public void givenLongIntegerShouldThrowNullPointException() {
+    @Test(expected = InvalidParameterException.class)
+    public void givenLongIntegerShouldThrowInvalidParameterException() {
         //act
         String actualResult = powerOfFour.isPowerOfFour(1111111111);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void givenNullShouldThrowNullPointerException() {
+        //act
+        String actualResult = powerOfFour.isPowerOfFour(null);
     }
 
 }
