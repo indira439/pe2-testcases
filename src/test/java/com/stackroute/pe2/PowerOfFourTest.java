@@ -39,6 +39,22 @@ public class PowerOfFourTest {
     }
 
     @Test
+    public void givenAnIntegerShouldReturnIsPowerOfFourFailure() {
+        //act
+        String actualResult = powerOfFour.isPowerOfFour(16);
+        //assert
+        assertNotEquals("Given integer is power of 4",actualResult);
+    }
+
+    @Test
+    public void givenAnIntegerShouldReturnIsNotAPowerOfFourFailure() {
+        //act
+        String actualResult = powerOfFour.isPowerOfFour(20);
+        //assert
+        assertNotEquals("Given integer is not a power of 4",actualResult);
+    }
+
+    @Test
     public void givenAnNegativeIntegerShouldReturnIsPowerOfFour() {
         //act
         String actualResult = powerOfFour.isPowerOfFour(-16);

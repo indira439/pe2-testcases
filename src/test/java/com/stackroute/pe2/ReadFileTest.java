@@ -38,6 +38,14 @@ public class ReadFileTest {
         assertEquals(22,actualResult);
     }
 
+    @Test
+    public void givenFileShouldReturnTheLengthOfTheFileFailure() {
+        //act
+        String actualResult = readFile.lengthOf("sample",".txt");
+        //assert
+        assertNotEquals(12,actualResult);
+    }
+
     @Test(expected = FileNotFoundException.class)
     public void givenInvalidFileShouldThrowException() {
         //act
@@ -50,14 +58,8 @@ public class ReadFileTest {
         //act
         String actualResult = readFile.fileReader("sample",".txt");
         //assert
-        assertEquals("THIS IS A SAMPLe FILE.",actualResult);
+        assertNotEquals("THIS IS A SAMPLe FILE.",actualResult);
     }
 
-    @Test
-    public void givenFileShouldReturnTheLengthOfTheFileFailure() {
-        //act
-        String actualResult = readFile.lengthOf("sample",".txt");
-        //assert
-        assertEquals(12,actualResult);
-    }
+
 }

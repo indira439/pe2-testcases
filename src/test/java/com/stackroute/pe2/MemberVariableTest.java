@@ -43,6 +43,29 @@ public class MemberVariableTest {
         //assert
         assertEquals(45000.45,actualResult);
     }
+    @Test
+    public void givenStringShouldDisplayMemberNameFailure() {
+        //act
+        String actualResult = memberVariable.memberName("indu");
+        //assert
+        assertNotEquals("in",actualResult);
+    }
+
+    @Test
+    public void givenIntegerShouldDisplayMembersAgeFailure() {
+        //act
+        int actualResult = memberVariable.memberAge(15);
+        //assert
+        assertNotEquals(67,actualResult);
+    }
+
+    @Test
+    public void givenFloatShouldDisplayMembersSalaryFailure() {
+        //act
+        int actualResult = memberVariable.memberSalary(45000.45);
+        //assert
+        assertNotEquals(2547,actualResult);
+    }
 
     @Test
     public void givenEmptyStringShouldThrowErrorMessage() {
@@ -60,10 +83,19 @@ public class MemberVariableTest {
         String salary = memberVariable.memberSalary(null);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void givenNegativeIntegerShouldThrowIllegalArgumentException() {
+    @Test
+    public void givenNegativeIntegerShouldThrowErrorMessage() {
         //act
-        String age = memberVariable.memberAge(-20);
-        String salary = memberVariable.memberAge(-20000.598);
+        String actualResult = memberVariable.memberAge(-20);
+        //assert
+        assertEquals("Age will not be in negative",actualResult);
+    }
+
+    @Test
+    public void givenNegativeIntegerShouldThrowErrorMessage() {
+        //act
+        String actualResult = memberVariable.memberSalary(-2000.76);
+        //assert
+        assertEquals("Salary will not be in negative",actualResult);
     }
 }

@@ -40,6 +40,32 @@ public class EvenNumTestTest {
         assertEquals("False",actualResult);
 
     }
+    @Test
+    public void givenAnEVentIntegerShouldReturnTrueFailure() {
+        //act
+        boolean actualResult = evenNumTest.isEven(6);
+        //assert
+        assertNotEquals("False",actualResult);
+
+    }
+
+    @Test
+    public void givenAnOddIntegerShouldReturnFalseFailure() {
+        //act
+        boolean actualResult = evenNumTest.isEven(7);
+        //assert
+        assertNotEquals("True",actualResult);
+
+    }
+
+    @Test
+    public void givenAnNegativeIntegerShouldThrowError() {
+        //act
+        boolean actualResult = evenNumTest.isEven(-6);
+        //assert
+        assertEquals("Only positive numbers",actualResult);
+
+    }
 
     @Test(expected = InvalidParameterException.class)
     public void givenStringShouldThrowInvalidParameterException() {

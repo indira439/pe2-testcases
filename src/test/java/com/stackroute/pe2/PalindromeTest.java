@@ -30,6 +30,12 @@ public class PalindromeTest {
     }
 
     @Test
+    public void givenAStringShouldReturnIsPalindromeFailure() {
+        //assert
+        assertNotEquals("Given string is not a palindrome",palindrome.isPalindrome("madam"));
+    }
+
+    @Test
     public void givenAStringShouldReturnNotAPalindrome() {
         //assert
         assertEquals("Given string is not a palindrome",palindrome.isPalindrome("indu"));
