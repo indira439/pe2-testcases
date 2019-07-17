@@ -1,9 +1,15 @@
 package com.stackroute.pe2;
 
 public class Member {
+    /*
+    Variables of Member class
+     */
     public String name;
     public int age;
     public double salary;
+    /*
+    Getters and setters for each variables.
+     */
 
     public String getName() {
         return name;
